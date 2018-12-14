@@ -1,0 +1,2 @@
+riot.tag2('blog-entries', '<blog url: https: www w3schools com w3images woods jpg alt: nature heading: title heading title-discription: title description content: mauris neque quam fermentum ut nisl vitae convallis maximus nisl sed mattis nunc id lorem euismod placerat vivamus porttitor magna enim ac accumsan tortor cursus at phasellus sed ultricies mi non congue ullam corper praesent tincidunt sed tellus ut rutrum sed vitae justo condimentum porta lectus vitae ultricies congue gravida diam non fringilla></blog>', '', '', function(opts) {
+});
