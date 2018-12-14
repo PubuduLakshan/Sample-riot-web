@@ -7,9 +7,24 @@ riot.tag2('blog', '<div class="w3-card-4 w3-margin w3-white"> <img riot-src="{op
 });
 riot.tag2('home', '<div class="w3-row"> <div class="w3-col l8 s12"> <blog-entries></blog-entries> </div> <div class="w3-col l4"> <profile></profile> <side-post-list></side-post-list> <post-tags></post-tags> </div> </div><br> </div>', '', '', function(opts) {
 });
-riot.tag2('new-post-form', '', '', '', function(opts) {
+riot.tag2('new-post-form', '<form onsubmit="{addpost}"> <div class="form-group"> <label for="post title">Post Title</label> <input type="text" class="form-control" ref="post_title" placeholder="Your Post Title"> </div> <div class="form-group"> <label for="image url">Image URL</label> <input type="text" class="form-control" ref="image_url" placeholder="Your Image URL"> </div> <div class="form-group"> <label for="post description">Post Description</label> <input type="text" class="form-control" ref="post_description" placeholder="Your Image URL"> </div> <div class="form-group"> <label for="post content">Post Content</label> <textarea type="text" class="form-control" ref="post_content"></textarea> </div> <input type="submit" class="btn btn-primary pull-right" value="Publish My Post Now!"> </form>', '', '', function(opts) {
+
+
+this.addpost = (e)=>{
+    e.preventDefault();
+    var newpost = {
+        post_title:this.refs.post_title.value,
+        image_url:this.refs.image_url.value,
+        post_description:this.refs.post_description.value,
+        post_content:this.refs.post_content.value
+
+    };
+
+   this.posts.push(newpost);
+   console.log(this.posts);
+}
 });
-riot.tag2('newpost', 'New post', '', '', function(opts) {
+riot.tag2('newpost', '<h2>Create New Post</h2> <new-post-form></new-post-form>', '', '', function(opts) {
 });
 riot.tag2('post-tag', '<span class="w3-tag w3-light-grey w3-small w3-margin-bottom">{opts.tag_name}</span>', '', '', function(opts) {
 });
